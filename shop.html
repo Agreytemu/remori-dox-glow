@@ -1,0 +1,108 @@
+<!DOCTYPE html>
+<html lang="sw">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Totooo Dox & Glow - Duka</title>
+<link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap" rel="stylesheet">
+<link rel="icon" href="images/favicon.png" type="image/png">
+
+<style>
+* {margin:0; padding:0; box-sizing:border-box;}
+body {font-family:'Roboto', sans-serif; background:#fefefe; color:#111;}
+header {display:flex; justify-content:space-between; align-items:center; padding:15px 50px; background:#ff0080; color:#fff; position:sticky; top:0; z-index:1000;}
+header .logo {font-family:'Times New Roman', serif; font-size:28px; font-weight:bold;}
+header nav ul {display:flex; list-style:none;}
+header nav ul li {margin-left:30px;}
+header nav ul li a {text-decoration:none; color:#fff; font-weight:bold; transition:0.3s;}
+header nav ul li a:hover {color:#fff3f8;}
+
+/* Shop Section */
+#shop {padding:60px 20px; text-align:center;}
+#shop h2 {font-family:'Times New Roman', serif; font-size:36px; margin-bottom:40px; color:#ff1493;}
+.product-grid {display:flex; flex-wrap:wrap; justify-content:center; gap:30px;}
+.product-card {
+    background: linear-gradient(135deg, #1e90ff, #ff69b4);
+    width:260px; height:360px; border-radius:25px; color:#fff; font-weight:bold;
+    display:flex; flex-direction:column; align-items:center; justify-content:flex-start; padding:20px;
+    box-shadow:0 10px 30px rgba(0,0,0,0.15); transition: transform 0.4s, box-shadow 0.4s, background 0.5s;
+    cursor:pointer;
+}
+.product-card img {width:100%; border-radius:20px; margin-bottom:15px;}
+.product-card h3 {font-family:'Times New Roman', serif; font-size:24px; margin-bottom:10px;}
+.product-card p {margin-top:auto; background:rgba(0,0,0,0.2); padding:8px 15px; border-radius:10px; transition:background 0.3s;}
+.product-card:hover {
+    transform: translateY(-10px) scale(1.05);
+    box-shadow:0 15px 40px rgba(0,0,0,0.25);
+    background: linear-gradient(135deg, #ff69b4, #1e90ff);
+}
+.product-card:active {transform: scale(0.98);}
+
+/* Footer */
+footer {padding:25px; background:#ff0080; color:#fff; text-align:center; font-size:14px; margin-top:30px;}
+@media(max-width:1024px){.product-card {width:220px; height:320px;}}
+@media(max-width:768px){header {flex-direction:column; padding:15px 20px;} header nav ul {flex-direction:column; gap:15px; margin-top:10px;} .product-card {width:90%; height:auto;}}
+</style>
+</head>
+<body>
+
+<!-- Header -->
+<header>
+   <div class="logo">
+    <img src="images/logo.png" alt="Totooo Dox & Glow Logo" style="height:50px;">
+</div>
+
+    <nav>
+        <ul>
+            <li><a href="index.html">Nyumbani</a></li>
+            <li><a href="shop.html">Duka</a></li>
+            <li><a href="about.html">Kuhusu</a></li>
+            <li><a href="contact.html">Wasiliana</a></li>
+        </ul>
+    </nav>
+</header>
+
+<!-- Shop Section -->
+<section id="shop">
+    <h2>Bidhaa Zetu</h2>
+    <div class="product-grid">
+        <div class="product-card" onclick="location.href='tshirt.html'">
+            <img src="images/tshirt1.jpg" alt="T-Shirt">
+            <h3>T-Shirt</h3>
+            <p>Nunua Sasa</p>
+        </div>
+        <div class="product-card" onclick="location.href='hoodie.html'">
+            <img src="images/hoodie1.jpg" alt="Hoodie">
+            <h3>Hoodie</h3>
+            <p>Nunua Sasa</p>
+        </div>
+        <div class="product-card" onclick="location.href='suruali.html'">
+            <img src="images/suruali1.jpg" alt="Suruali">
+            <h3>Suruali</h3>
+            <p>Nunua Sasa</p>
+        </div>
+        <div class="product-card" onclick="location.href='flatcap.html'">
+            <img src="images/flatcap1.jpg" alt="Flat Cap">
+            <h3>Flat Cap</h3>
+            <p>Nunua Sasa</p>
+        </div>
+        <div class="product-card" onclick="location.href='perfume.html'">
+            <img src="images/perfume1.jpg" alt="Manukato">
+            <h3>Manukato</h3>
+            <p>Nunua Sasa</p>
+        </div>
+        <div class="product-card" onclick="location.href='cosmetics.html'">
+            <img src="images/cosmetics1.jpg" alt="Mafuta na lotion">
+            <h3>Mafuta na Lotion</h3>
+            <p>Nunua Sasa</p>
+        </div>
+    </div>
+</section>
+
+<!-- Footer -->
+<footer>
+    <p>&copy; 2025 Totooo Dox & Glow. Haki zote zimehifadhiwa.</p>
+</footer>
+
+</body>
+</html>

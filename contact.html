@@ -1,0 +1,125 @@
+<!DOCTYPE html>
+<html lang="sw">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Totooo Dox & Glow - Wasiliana</title>
+<link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap" rel="stylesheet">
+<link rel="icon" href="images/favicon.png" type="image/png">
+
+<style>
+* {margin:0; padding:0; box-sizing:border-box;}
+body {font-family:'Roboto', sans-serif; background:#ffe6f0; color:#111;}
+header {display:flex; justify-content:space-between; align-items:center; padding:15px 50px; background:#ff0080; color:#fff; position:sticky; top:0; z-index:1000;}
+header .logo {font-family:'Times New Roman', serif; font-size:28px; font-weight:bold;}
+header nav ul {display:flex; list-style:none;}
+header nav ul li {margin-left:30px;}
+header nav ul li a {text-decoration:none; color:#fff; font-weight:bold; transition:0.3s;}
+header nav ul li a:hover {color:#fff3f8;}
+#contact {display:flex; justify-content:center; padding:80px 20px;}
+.contact-card {background:#fff; padding:40px; border-radius:20px; box-shadow:0 10px 30px rgba(0,0,0,0.1); max-width:900px; width:100%; display:flex; flex-wrap:wrap; gap:40px;}
+.contact-info {flex:1; min-width:250px;}
+.contact-info h2 {font-family:'Times New Roman', serif; font-size:32px; margin-bottom:20px; color:#ff1493;}
+.contact-info p {margin-bottom:15px; font-size:16px;}
+.social-icons {display:flex; gap:15px; margin-top:20px; flex-wrap:wrap;}
+.social-icons a {text-decoration:none; padding:10px 15px; border-radius:8px; color:#fff; font-weight:bold; transition:0.3s; text-align:center;}
+.social-icons a:hover {opacity:0.8;}
+.social-icons .fb {background:#1877F2;}
+.social-icons .ig {background:#E4405F;}
+.social-icons .tw {background:#1DA1F2;}
+.social-icons .yt {background:#FF0000;}
+.social-icons .tt {background:#000000;}
+.contact-form {flex:1; min-width:250px;}
+.contact-form h2 {font-family:'Times New Roman', serif; font-size:32px; margin-bottom:20px; color:#ff1493;}
+.contact-form form {display:flex; flex-direction:column; gap:15px;}
+.contact-form input, .contact-form textarea {padding:12px 15px; border-radius:8px; border:1px solid #ccc; font-size:16px; width:100%;}
+.contact-form button {padding:12px 20px; border:none; border-radius:8px; background:#ff0080; color:#fff; font-weight:bold; font-size:16px; cursor:pointer; transition:0.3s;}
+.contact-form button:hover {background:#7928ca;}
+footer {padding:25px; background:#ff0080; color:#fff; text-align:center; font-size:14px; margin-top:30px;}
+#google_translate_element {position:fixed; top:10px; right:10px; z-index:1000;}
+@media(max-width:1024px){.contact-card {flex-direction:column;}}
+@media(max-width:768px){header {flex-direction:column; padding:15px 20px;} header nav ul {flex-direction:column; gap:15px; margin-top:10px;}}
+</style>
+</head>
+<body>
+
+<!-- Google Translate Widget -->
+<div id="google_translate_element"></div>
+
+<!-- Header -->
+<header>
+   <div class="logo">
+    <img src="images/logo.png" alt="Totooo Dox & Glow Logo" style="height:50px;">
+</div>
+ 
+    <nav>
+        <ul>
+            <li><a href="index.html">Nyumbani</a></li>
+            <li><a href="shop.html">Duka</a></li>
+            <li><a href="about.html">Kuhusu</a></li>
+            <li><a href="contact.html">Wasiliana</a></li>
+        </ul>
+    </nav>
+</header>
+
+<!-- Contact Section -->
+<section id="contact">
+    <div class="contact-card">
+        <!-- Left: Contact Info -->
+        <div class="contact-info">
+            <h2>Mawasiliano</h2>
+            <p>Simu: +255 123 456 789</p>
+            <p>WhatsApp: <a href="https://wa.me/255123456789" target="_blank">+255 123 456 789</a></p>
+            <p>Email: <a href="mailto:totooodoxglow@gmail.com">totooodoxglow@gmail.com</a></p>
+            <div class="social-icons">
+                <a href="https://www.facebook.com/TotoooDoxGlow" target="_blank" class="fb">FB</a>
+                <a href="https://www.instagram.com/TotoooDoxGlow" target="_blank" class="ig">IG</a>
+                <a href="https://www.twitter.com/TotoooDoxGlow" target="_blank" class="tw">TW</a>
+                <a href="https://www.youtube.com/@TotoooDoxGlow" target="_blank" class="yt">YT</a>
+                <a href="https://www.tiktok.com/@TotoooDoxGlow" target="_blank" class="tt">TT</a>
+            </div>
+        </div>
+
+        <!-- Right: Contact Form -->
+        <div class="contact-form">
+            <h2>Tuma Oda / Ujumbe</h2>
+            <form id="contactForm" 
+                  action="https://api.we3form.com/form/YOUR_FORM_ID" 
+                  method="POST">
+                <input type="text" name="name" placeholder="Jina lako" required>
+                <input type="tel" name="phone" placeholder="Namba yako" required>
+                <input type="email" name="email" placeholder="Email yako" required>
+                <textarea name="message" placeholder="Ujumbe wako / Oda" rows="5" required></textarea>
+                <button type="submit">Tuma</button>
+            </form>
+        </div>
+    </div>
+</section>
+
+<!-- Footer -->
+<footer>
+    <p>&copy; 2025 Totooo Dox & Glow. Haki zote zimehifadhiwa.</p>
+</footer>
+
+<script>
+// Google Translate
+function googleTranslateElementInit() {
+  new google.translate.TranslateElement({pageLanguage: 'sw', layout: google.translate.TranslateElement.InlineLayout.HORIZONTAL}, 'google_translate_element');
+}
+
+// Form submission to we3form
+document.getElementById('contactForm').addEventListener('submit', function(e){
+    e.preventDefault();
+    const formData = new FormData(this);
+    fetch(this.action, {method:'POST', body:formData})
+    .then(res => {
+        if(res.ok){ alert("Oda yako imetumwa! Tutawasiliana nawe."); this.reset(); }
+        else alert("Kuna tatizo, jaribu tena baadaye.");
+    })
+    .catch(()=> alert("Kuna tatizo, jaribu tena baadaye."));
+});
+</script>
+<script type="text/javascript" src="//translate.google.com/translate_a/element.js?cb=googleTranslateElementInit"></script>
+
+</body>
+</html>

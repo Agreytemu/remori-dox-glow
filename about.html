@@ -1,0 +1,114 @@
+<!DOCTYPE html>
+<html lang="sw">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Totooo Dox & Glow - Kuhusu</title>
+<link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap" rel="stylesheet">
+<link rel="icon" href="images/favicon.png" type="image/png">
+
+<style>
+/* ---------------- CSS ---------------- */
+* {margin:0; padding:0; box-sizing:border-box;}
+body {font-family: 'Roboto', sans-serif; background:#ffe6f0; color:#111;}
+
+/* Header / Navbar */
+header {
+    display:flex; justify-content:space-between; align-items:center;
+    padding:15px 50px; background:#ff69b4; color:#fff; position:sticky; top:0; z-index:1000;
+    box-shadow:0 4px 10px rgba(0,0,0,0.1);
+}
+header .logo {font-family:'Times New Roman', serif; font-size:28px; font-weight:bold;}
+header nav ul {display:flex; list-style:none;}
+header nav ul li {margin-left:30px;}
+header nav ul li a {text-decoration:none; color:#fff; font-weight:bold; transition:0.3s;}
+header nav ul li a:hover {color:#fff3f8;}
+
+/* About Section */
+#about {display:flex; justify-content:center; padding:80px 20px;}
+.about-card {
+    background:#fff; display:flex; align-items:center; gap:40px;
+    padding:40px; border-radius:20px; box-shadow:0 10px 30px rgba(0,0,0,0.1);
+    max-width:1000px; flex-wrap:wrap;
+}
+.about-card img {width:250px; border-radius:15px; object-fit:cover;}
+.about-text {max-width:650px;}
+.about-text h2 {font-family:'Times New Roman', serif; font-size:36px; margin-bottom:20px; color:#ff1493;}
+.about-text p {font-size:18px; line-height:1.7; margin-bottom:15px;}
+
+/* Footer */
+footer {padding:25px; background:#ff69b4; color:#fff; text-align:center; font-size:14px; margin-top:30px;}
+
+/* Google Translate */
+#google_translate_element {position:fixed; top:10px; right:10px; z-index:1000;}
+
+/* Responsive */
+@media(max-width:1024px){
+    .about-card {flex-direction:column; text-align:center;}
+    .about-card img {width:80%; margin-bottom:20px;}
+}
+@media(max-width:768px){
+    header {flex-direction:column; padding:15px 20px;}
+    header nav ul {flex-direction:column; gap:15px; margin-top:10px;}
+}
+</style>
+</head>
+<body>
+
+<!-- Google Translate Widget -->
+<div id="google_translate_element"></div>
+
+<!-- Header -->
+<header>
+    <div class="logo">
+    <img src="images/logo.png" alt="Totooo Dox & Glow Logo" style="height:50px;">
+</div>
+
+    <nav>
+        <ul>
+            <li><a href="index.html">Nyumbani</a></li>
+            <li><a href="shop.html">Duka</a></li>
+            <li><a href="about.html">Kuhusu</a></li>
+            <li><a href="contact.html">Wasiliana</a></li>
+        </ul>
+    </nav>
+</header>
+
+<!-- About Section -->
+<section id="about">
+    <div class="about-card">
+        <img src="images/manager.jpg" alt="Meneja">
+        <div class="about-text">
+            <h2>Kuhusu Totooo Dox & Glow</h2>
+            <p>Karibu kwenye Totooo Dox & Glow! Sisi ni timu ya vijana wa chuo cha Mbalizi Institute of Health Mbeya,
+            tukiunganisha mitindo ya kisasa ya mitaani na vipodozi vya premium. Tunalenga wateja wa vyuo na wadau wa fashion
+            kupata bidhaa bora kwa ubora na mtindo.</p>
+            
+            <p>Bidhaa zetu ni pamoja na T-shirts, hoodie, suruali, flat caps na vipodozi vya ubora. Tunahakikisha kila mteja
+            anapata bidhaa anazopenda kwa haraka na kwa mtindo unaoendana na maisha ya kisasa ya campus.</p>
+            
+            <p>Meneja wetu, aliye kwenye picha hapa, anahakikisha kila kitu kinaendeshwa kwa ufanisi na anapenda kuzungumza na
+            wateja ili kuhakikisha kila mmoja anapata uzoefu bora. Karibu uone jinsi tunavyofanya mitindo kuwa rahisi na
+            kuvutia kwa wote.</p>
+        </div>
+    </div>
+</section>
+
+<!-- Footer -->
+<footer>
+    <p>&copy; 2025 Totooo Dox & Glow. Haki zote zimehifadhiwa.</p>
+</footer>
+
+<script>
+// Google Translate Script
+function googleTranslateElementInit() {
+  new google.translate.TranslateElement(
+    {pageLanguage: 'sw', layout: google.translate.TranslateElement.InlineLayout.HORIZONTAL},
+    'google_translate_element'
+  );
+}
+</script>
+<script type="text/javascript" src="//translate.google.com/translate_a/element.js?cb=googleTranslateElementInit"></script>
+
+</body>
+</html>

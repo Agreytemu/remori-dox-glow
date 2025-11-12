@@ -1,0 +1,160 @@
+<!DOCTYPE html>
+<html lang="sw">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Totooo Dox & Glow - Cosmetics</title>
+<link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap" rel="stylesheet">
+<link rel="icon" href="images/favicon.png" type="image/png">
+
+<style>
+* {margin:0; padding:0; box-sizing:border-box;}
+body {font-family:'Roboto', sans-serif; background:#fff0f5; color:#111;}
+header {display:flex; justify-content:space-between; align-items:center; padding:15px 50px; background:#ff1493; color:#fff; position:sticky; top:0; z-index:1000;}
+header .logo {font-family:'Times New Roman', serif; font-size:28px; font-weight:bold;}
+header nav ul {display:flex; list-style:none;}
+header nav ul li {margin-left:30px;}
+header nav ul li a {text-decoration:none; color:#fff; font-weight:bold; transition:0.3s;}
+header nav ul li a:hover {color:#ffe4f1;}
+
+#shop {padding:50px; text-align:center;}
+#shop h2 {font-size:36px; margin-bottom:40px; color:#ff69b4;}
+#quickSearch {width:50%; padding:10px 15px; border-radius:8px; border:1px solid #ccc; margin-bottom:30px; font-size:16px;}
+#noResults {display:none; color:#ff1493; font-weight:bold; margin-bottom:20px;}
+
+.product-grid {display:flex; flex-wrap:wrap; justify-content:center; gap:30px;}
+.product-card {
+    background:#fff; width:300px; padding:20px; border-radius:15px;
+    box-shadow:0 8px 20px rgba(0,0,0,0.1); cursor:pointer; transition:0.3s; display:flex; flex-direction:column; align-items:center;
+}
+.product-card:hover {transform:translateY(-5px); box-shadow:0 12px 25px rgba(0,0,0,0.15);}
+.product-card img {width:100%; border-radius:15px; margin-bottom:15px;}
+.product-card h3 {font-family:'Times New Roman', serif; margin-bottom:10px;}
+.product-card p {margin-bottom:10px; font-weight:bold; color:#ff69b4;}
+.product-card select, .product-card input {width:100%; padding:10px; margin-bottom:10px; border-radius:8px; border:1px solid #ccc;}
+.product-card button {padding:12px 20px; border:none; border-radius:12px; background:linear-gradient(135deg,#ff69b4,#ff1493); color:#fff; font-weight:bold; cursor:pointer; transition:0.3s;}
+.product-card button:hover {background:linear-gradient(135deg,#ff1493,#ff69b4); transform:scale(1.05);}
+
+footer {padding:25px; background:#ff1493; color:#fff; text-align:center; font-size:14px; margin-top:30px;}
+</style>
+</head>
+<body>
+
+<header>
+    <div class="logo">
+    <img src="images/logo.png" alt="Totooo Dox & Glow Logo" style="height:50px;">
+</div>
+
+    <nav>
+        <ul>
+            <li><a href="index.html">Nyumbani</a></li>
+            <li><a href="shop.html">Duka</a></li>
+            <li><a href="about.html">Kuhusu</a></li>
+            <li><a href="contact.html">Wasiliana</a></li>
+        </ul>
+    </nav>
+</header>
+
+<section id="shop">
+    <h2>Mafuta na Lotion</h2>
+    <input type="text" id="quickSearch" placeholder="Tafuta bidhaa...">
+    <div id="noResults">Hakuna bidhaa zilizopatikana</div>
+    <div class="product-grid" id="productGrid"></div>
+</section>
+
+<footer>
+    <p>&copy; 2025 Totooo Dox & Glow. Haki zote zimehifadhiwa.</p>
+</footer>
+
+<script>
+const productGrid = document.getElementById('productGrid');
+const searchInput = document.getElementById('quickSearch');
+const noResults = document.getElementById('noResults');
+const adminNumber = '255740430220';
+
+// Load cosmetics.json
+fetch('data/cosmetics.json')
+.then(res => {
+    if(!res.ok) throw new Error('JSON haiwezi kusomwa');
+    return res.json();
+})
+.then(products => {
+    if(!products || products.length === 0){
+        noResults.textContent = "Hakuna bidhaa zilizopatikana";
+        noResults.style.display = 'block';
+        return;
+    }
+
+    products.forEach(product => {
+        const card = document.createElement('div');
+        card.className = 'product-card';
+        card.innerHTML = `
+            <img src="${product.image}" alt="${product.name}">
+            <h3>${product.name}</h3>
+            <p>${product.price}</p>
+            <select class="sizeSelect">
+                <option value="">Chagua size</option>
+                ${product.sizes.map(size => `<option value="${size}">${size}</option>`).join('')}
+            </select>
+            <input type="text" class="customerName" placeholder="Jina lako">
+            <input type="text" class="customerPhone" placeholder="Namba yako">
+            <button class="buyButton">Nunua Sasa</button>
+            <p>Stock iliyopo: <span class="stockCount">${product.stock}</span></p>
+        `;
+        productGrid.appendChild(card);
+
+        const buyBtn = card.querySelector('.buyButton');
+        buyBtn.addEventListener('click', () => {
+            const size = card.querySelector('.sizeSelect').value;
+            const name = card.querySelector('.customerName').value.trim();
+            const phone = card.querySelector('.customerPhone').value.trim();
+            const stockEl = card.querySelector('.stockCount');
+            let stock = parseInt(stockEl.textContent);
+
+            if(!size || !name || !phone){
+                alert('Tafadhali jaza size, jina na namba yako');
+                return;
+            }
+
+            if(stock <= 0){
+                alert('Samahani, bidhaa hii imeisha');
+                return;
+            }
+
+            // WhatsApp message
+            const message = encodeURIComponent(
+                `Oda ya ${product.name}\nJina: ${name}\nNamba: ${phone}\nSize: ${size}\nPicha: ${window.location.origin}/${product.image}`
+            );
+            window.open(`https://wa.me/${adminNumber}?text=${message}`, '_blank');
+
+            stock--;
+            stockEl.textContent = stock;
+            alert('Oda yako imeandaliwa, tuta wasiliana nawe WhatsApp kuthibitisha bei na malipo.');
+        });
+    });
+})
+.catch(err => {
+    console.error('Tatizo kusoma cosmetics.json:', err);
+    noResults.textContent = "Tatizo kuonyesha bidhaa, tafadhali jaribu baadaye.";
+    noResults.style.display = 'block';
+});
+
+// Quick search
+searchInput.addEventListener('input', () => {
+    const filter = searchInput.value.toLowerCase();
+    let anyVisible = false;
+    document.querySelectorAll('.product-card').forEach(card => {
+        const name = card.querySelector('h3').textContent.toLowerCase();
+        if(name.includes(filter)){
+            card.style.display = 'flex';
+            anyVisible = true;
+        } else {
+            card.style.display = 'none';
+        }
+    });
+    noResults.style.display = anyVisible ? 'none' : 'block';
+});
+</script>
+
+</body>
+</html>
