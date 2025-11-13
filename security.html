@@ -4,94 +4,176 @@
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>Security Policy - Remory Dox & Glow</title>
-<link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600&family=Playfair+Display:wght@700&display=swap" rel="stylesheet">
 <link rel="icon" href="images/favicon.png" type="image/png">
+
 <style>
+/* ----------- GENERAL STYLE ----------- */
+* {margin:0; padding:0; box-sizing:border-box;}
 body {
-  font-family: 'Roboto', sans-serif;
-  background: #fff0f6;
-  color: #222;
-  margin: 0;
-  padding: 0;
+  font-family:'Poppins',sans-serif;
+  background:linear-gradient(to right,#ffeffa,#f2e5ff);
+  color:#222;
+  padding:0;
 }
+#google_translate_element {
+  position:fixed;
+  top:10px;
+  right:10px;
+  z-index:1000;
+}
+
+/* ----------- CONTAINER ----------- */
 .container {
-  max-width: 900px;
-  margin: 60px auto;
-  background: #fff;
-  padding: 40px;
-  border-radius: 15px;
-  box-shadow: 0 8px 25px rgba(0,0,0,0.1);
+  max-width:900px;
+  margin:80px auto;
+  background:#fff;
+  padding:50px;
+  border-radius:20px;
+  box-shadow:0 8px 25px rgba(0,0,0,0.15);
 }
+
+/* ----------- HEADINGS ----------- */
 h1 {
-  color: #ff0080;
-  text-align: center;
-  margin-bottom: 30px;
-  font-size: 36px;
+  font-family:'Playfair Display',serif;
+  text-align:center;
+  color:#ff0080;
+  font-size:42px;
+  margin-bottom:25px;
 }
 h2 {
-  color: #7928ca;
-  margin-top: 30px;
+  color:#7928ca;
+  font-size:22px;
+  margin-top:35px;
+  border-left:5px solid #ff0080;
+  padding-left:10px;
 }
-table {
-  width: 100%;
-  border-collapse: collapse;
-  margin-top: 15px;
+p,ul,ol {
+  line-height:1.8;
+  margin-top:10px;
 }
-th, td {
-  padding: 10px;
-  border: 1px solid #ccc;
-  text-align: center;
+ul li, ol li {margin-bottom:8px;}
+
+/* ----------- LINKS ----------- */
+a {
+  color:#ff0080;
+  text-decoration:none;
+  font-weight:bold;
 }
-th {
-  background: #ff0080;
-  color: #fff;
-}
+a:hover {color:#7928ca;}
+
+/* ----------- FOOTER ----------- */
 footer {
-  text-align: center;
-  margin-top: 50px;
-  padding: 20px;
-  background: #ff0080;
-  color: #fff;
-  border-radius: 0 0 10px 10px;
+  text-align:center;
+  margin-top:50px;
+  padding:20px;
+  background:linear-gradient(to right,#ff0080,#7928ca);
+  color:#fff;
+  border-radius:0 0 15px 15px;
+  font-size:14px;
+}
+footer a {
+  color:#fff;
+  text-decoration:underline;
+}
+footer a:hover {
+  color:#e0e0e0;
+}
+
+/* ----------- BUTTON ----------- */
+.home-btn {
+  display:inline-block;
+  background:#ff0080;
+  color:#fff;
+  padding:12px 25px;
+  border-radius:8px;
+  font-weight:bold;
+  text-decoration:none;
+  transition:0.3s;
+  margin-top:25px;
+}
+.home-btn:hover {
+  background:#7928ca;
+  transform:scale(1.05);
+}
+
+/* ----------- RESPONSIVE ----------- */
+@media(max-width:768px){
+  .container {padding:30px 20px;}
+  h1 {font-size:32px;}
+  h2 {font-size:20px;}
 }
 </style>
 </head>
 <body>
+
+<!-- Google Translate -->
+<div id="google_translate_element"></div>
+
 <div class="container">
-  <h1>⚔️ Security Policy — Remory Dox & Glow</h1>
-  <p>Tunajali sana usalama wa taarifa za wateja wetu. Ukigundua udhaifu au tatizo la usalama, tafadhali fuata maelekezo hapa chini.</p>
+  <h1>🛡️ Sera ya Usalama — Remory Dox & Glow</h1>
 
-  <h2>🔐 Supported Versions</h2>
-  <table>
-    <tr><th>Version</th><th>Supported</th></tr>
-    <tr><td>5.1.x</td><td>✅ Supported</td></tr>
-    <tr><td>5.0.x</td><td>❌ Not Supported</td></tr>
-    <tr><td>4.0.x</td><td>✅ Supported</td></tr>
-    <tr><td>&lt; 4.0</td><td>❌ Not Supported</td></tr>
-  </table>
+  <p>Karibu kwenye ukurasa rasmi wa sera za usalama za <strong>Remory Dox & Glow</strong>. Tunajali faragha na usalama wa kila mteja wetu. Sera hii inaelezea jinsi tunavyolinda taarifa, data, na huduma zetu mtandaoni.</p>
 
-  <h2>🛡️ Security Guidelines</h2>
+  <h2>1. Ulinzi wa Data na Faragha</h2>
   <ul>
-    <li>Tunatumia HTTPS kulinda mawasiliano yote.</li>
-    <li>Taarifa za wateja hazitolewi kwa watu wa tatu bila ridhaa yao.</li>
-    <li>Wateja wanashauriwa kutumia nywila zenye mchanganyiko wa herufi, namba, na alama maalum.</li>
-    <li>Tovuti hupimwa mara kwa mara kugundua kasoro za kiusalama.</li>
+    <li>Tovuti hii inalindwa kwa kutumia <strong>SSL (Secure Socket Layer)</strong> kuhakikisha mawasiliano yako ni salama.</li>
+    <li>Tunahifadhi taarifa binafsi kwa usiri, na hatuzisambazi kwa mtu mwingine bila ridhaa yako.</li>
+    <li>Tunapunguza upatikanaji wa data kwa wafanyakazi walioidhinishwa pekee.</li>
   </ul>
 
-  <h2>📩 Reporting a Vulnerability</h2>
-  <p>Ikiwa utabaini tatizo la kiusalama:</p>
+  <h2>2. Usalama wa Malipo</h2>
+  <ul>
+    <li>Malipo yote hufanyika kupitia njia rasmi kama <strong>M-Pesa, TigoPesa, Airtel Money</strong>.</li>
+    <li>Tovuti haikusanyi namba za kadi wala PIN za wateja.</li>
+    <li>Tafadhali hakikisha unafanya miamala pekee kupitia namba rasmi: <strong>+255 404 30220</strong>.</li>
+  </ul>
+
+  <h2>3. Kuripoti Kasoro au Udhaifu (Vulnerability)</h2>
+  <p>Kama utagundua kasoro ya kiusalama au unahisi kuna tatizo kwenye mfumo wetu:</p>
   <ol>
-    <li>Usilitangaze hadharani.</li>
-    <li>Tuma taarifa kwa: <b>security@remorydoxglow.com</b></li>
-    <li>Utaripotiwa maendeleo ndani ya siku 3 za kazi.</li>
+    <li>Usitangaze hadharani.</li>
+    <li>Tuma taarifa kwa: <strong>security@remorydoxglow.com</strong></li>
+    <li>Tutathibitisha kupokea ndani ya <strong>siku 3 za kazi</strong> na kutoa mrejesho wa hatua zinazochukuliwa.</li>
   </ol>
 
-  <h2>⚖️ Legal Notice</h2>
-  <p>Remory Dox & Glow haitahusishwa na uharibifu unaotokana na matumizi yasiyoidhinishwa ya mifumo yetu.</p>
+  <h2>4. Matumizi Sahihi ya Tovuti</h2>
+  <ul>
+    <li>Hairuhusiwi kutumia tovuti kwa udukuzi, spam, au kudanganya wateja wengine.</li>
+    <li>Tovuti inafanyiwa ukaguzi wa kiusalama mara kwa mara ili kuboresha utendaji.</li>
+  </ul>
+
+  <h2>5. Masharti ya Kisheria</h2>
+  <p>Tovuti hii inafuata misingi ya ulinzi wa data ya kimataifa (GDPR Principles). Ukiuka masharti haya, akaunti au upatikanaji wako unaweza kusitishwa bila taarifa zaidi.</p>
+
+  <h2>6. Mawasiliano</h2>
+  <ul>
+    <li>📧 Barua pepe: <a href="mailto:security@remorydoxglow.com">security@remorydoxglow.com</a></li>
+    <li>📞 WhatsApp: <a href="https://wa.me/25540430220" target="_blank">+255 404 30220</a></li>
+    <li>🌐 Tovuti: <a href="https://agreytemu.github.io/remori-dox-glow/">remorydoxglow.com</a></li>
+  </ul>
+
+  <center>
+    <a href="index.html" class="home-btn">🏠 Rudi Nyumbani</a>
+  </center>
 
   <footer>
-    <p>&copy; 2025 Remory Dox & Glow — All Rights Reserved</p>
+    <p>&copy; 2025 Remory Dox & Glow — All Rights Reserved | 
+    <a href="index.html">Home</a> |
+    <a href="security.html">Security Policy</a></p>
   </footer>
 </div>
+
+<!-- Google Translate Script -->
+<script type="text/javascript">
+function googleTranslateElementInit() {
+  new google.translate.TranslateElement(
+    {pageLanguage:'sw', layout:google.translate.TranslateElement.InlineLayout.HORIZONTAL},
+    'google_translate_element'
+  );
+}
+</script>
+<script src="//translate.google.com/translate_a/element.js?cb=googleTranslateElementInit"></script>
+
 </body>
 </html>
