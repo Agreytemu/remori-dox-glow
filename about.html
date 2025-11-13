@@ -1,117 +1,193 @@
+
 <!DOCTYPE html>
 <html lang="sw">
 <head>
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Remori Dox & Glow - Kuhusu</title>
-<link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap" rel="stylesheet">
-<link rel="icon" href="favicon.png" type="image/png">
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<title>Kuhusu — Remori Dox & Glow</title>
+<link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&family=Playfair+Display:wght@400;700&display=swap" rel="stylesheet" />
 
 <style>
-/* ---------------- CSS ---------------- */
 * {margin:0; padding:0; box-sizing:border-box;}
-body {font-family: 'Roboto', sans-serif; background:#ffe6f0; color:#111;}
+body {
+  font-family: 'Roboto', sans-serif;
+  background: url('https://images.unsplash.com/photo-1615559331371-0f1d9a8b1c3c?auto=format&fit=crop&w=1400&q=80') no-repeat center center fixed;
+  background-size: cover;
+  color: #111;
+  line-height: 1.7;
+}
 
-/* Header / Navbar */
+/* Header */
 header {
-    display:flex; justify-content:space-between; align-items:center;
-    padding:15px 50px; background:#ff69b4; color:#fff; position:sticky; top:0; z-index:1000;
-    box-shadow:0 4px 10px rgba(0,0,0,0.1);
+  position: fixed;
+  top:0; left:0;
+  width: 100%;
+  background-color: rgba(255,20,147,0.85);
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 10px 40px;
+  z-index: 100;
+  box-shadow: 0 5px 15px rgba(0,0,0,0.3);
 }
-header .logo {font-family:'Times New Roman', serif; font-size:28px; font-weight:bold;}
-header nav ul {display:flex; list-style:none;}
-header nav ul li {margin-left:30px;}
-header nav ul li a {text-decoration:none; color:#fff; font-weight:bold; transition:0.3s;}
-header nav ul li a:hover {color:#fff3f8;}
+header .logo img {height:60px; border-radius:10px;}
+header nav a {
+  color: #fff;
+  text-decoration: none;
+  margin-left: 20px;
+  font-weight: 600;
+  transition: 0.3s;
+}
+header nav a:hover {color: #ffe6f0;}
 
-/* About Section */
-#about {display:flex; justify-content:center; padding:80px 20px;}
-.about-card {
-    background:#fff; display:flex; align-items:center; gap:40px;
-    padding:40px; border-radius:20px; box-shadow:0 10px 30px rgba(0,0,0,0.1);
-    max-width:1000px; flex-wrap:wrap;
+/* Hero Section */
+.hero {
+  height: 50vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  color: white;
+  background: rgba(0,0,0,0.4);
+  backdrop-filter: blur(3px);
 }
-.about-card img {width:250px; border-radius:15px; object-fit:cover;}
-.about-text {max-width:650px;}
-.about-text h2 {font-family:'Times New Roman', serif; font-size:36px; margin-bottom:20px; color:#ff1493;}
-.about-text p {font-size:18px; line-height:1.7; margin-bottom:15px;}
+.hero h2 {
+  font-family: 'Playfair Display', serif;
+  font-size: 3rem;
+  text-shadow: 2px 2px 6px rgba(0,0,0,0.7);
+  margin-bottom: 15px;
+}
+
+/* Main Content */
+.container {
+  max-width: 1000px;
+  margin: 100px auto 60px;
+  background: rgba(255,255,255,0.95);
+  border-radius: 25px;
+  padding: 50px 35px;
+  box-shadow: 0 10px 30px rgba(0,0,0,0.2);
+}
+h3.section-title {
+  color: #ff1493;
+  font-size: 1.8rem;
+  margin-bottom: 15px;
+  border-left: 5px solid #ff80ab;
+  padding-left: 12px;
+}
+.about-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 30px;
+  align-items: center;
+}
+.about-grid img {
+  width: 100%;
+  border-radius: 20px;
+  box-shadow: 0 5px 20px rgba(0,0,0,0.15);
+  object-fit: cover;
+}
+
+/* Values Cards */
+.values {
+  margin-top: 40px;
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+  gap: 20px;
+}
+.value-card {
+  background-color: #ffeef5;
+  padding: 25px;
+  border-radius: 20px;
+  text-align: center;
+  box-shadow: 0 3px 10px rgba(0,0,0,0.1);
+  transition: transform 0.2s, box-shadow 0.2s;
+}
+.value-card:hover { 
+  transform: translateY(-5px); 
+  box-shadow: 0 8px 25px rgba(0,0,0,0.2);
+}
+.value-card h4 { color: #ff1493; margin-bottom: 8px; font-family:'Playfair Display', serif;}
 
 /* Footer */
-footer {padding:25px; background:#ff69b4; color:#fff; text-align:center; font-size:14px; margin-top:30px;}
-
-/* Google Translate */
-#google_translate_element {position:fixed; top:10px; right:10px; z-index:1000;}
+footer {
+  text-align: center;
+  background-color: rgba(255,20,147,0.85);
+  color: white;
+  padding: 20px;
+  font-size: 0.9rem;
+  margin-top: 40px;
+}
+footer a {color: #fff; text-decoration:underline; font-weight:bold;}
+footer a:hover {color: #ffe6f0;}
 
 /* Responsive */
-@media(max-width:1024px){
-    .about-card {flex-direction:column; text-align:center;}
-    .about-card img {width:80%; margin-bottom:20px;}
+@media(max-width: 1024px){
+  .about-grid {grid-template-columns: 1fr;}
 }
-@media(max-width:768px){
-    header {flex-direction:column; padding:15px 20px;}
-    header nav ul {flex-direction:column; gap:15px; margin-top:10px;}
+@media(max-width: 768px){
+  header {flex-direction:column; padding:15px 20px;}
+  header nav {margin-top:10px;}
+  .hero h2 {font-size: 2.2rem;}
+  .container {margin: 80px 20px;}
 }
 </style>
 </head>
 <body>
 
-<!-- Google Translate Widget -->
-<div id="google_translate_element"></div>
-
-<!-- Header -->
 <header>
-    <div class="logo">
-    <img src="logo.png" alt="Totooo Dox & Glow Logo" style="height:70px;">
-</div>
-
-    <nav>
-        <ul>
-            <li><a href="index.html">Nyumbani</a></li>
-            <li><a href="shop.html">Duka</a></li>
-            <li><a href="about.html">Kuhusu</a></li>
-            <li><a href="contact.html">Wasiliana</a></li>
-        </ul>
-    </nav>
+  <div class="logo">
+    <img src="logo.png" alt="Remori Dox & Glow Logo">
+  </div>
+  <nav>
+    <a href="index.html">Nyumbani</a>
+    <a href="shop.html">Duka</a>
+    <a href="about.html">Kuhusu</a>
+    <a href="contact.html">Wasiliana</a>
+  </nav>
 </header>
 
-<!-- About Section -->
-<section id="about">
-    <div class="about-card">
-        <img src="manager.jpg" alt="Meneja">
-        <div class="about-text">
-            <h2>Kuhusu Remori Dox & Glow</h2>
-            <p>Karibu kwenye Remori Dox & Glow! Sisi ni timu ya vijana wa kizazi kipya <Strong>GEN Z</Strong>,
-            tukiunganisha mitindo ya kisasa ya mitaani na vipodozi vya premium. Tunalenga wateja wa vyuo na wadau wa fashion
-            kupata bidhaa bora kwa ubora na mtindo.</p>
-            
-            <p>Bidhaa zetu ni pamoja na T-shirts, hoodie, suruali, flat caps na vipodozi vya ubora pamoja na latest perfumes. Tunahakikisha kila mteja
-            anapata bidhaa anazopenda kwa haraka na kwa mtindo unaoendana na maisha ya kisasa ya campus.</p>
-            
-            <p>Meneja wetu, aliye kwenye picha hapa, anahakikisha kila kitu kinaendeshwa kwa ufanisi na anapenda kuzungumza na
-            wateja ili kuhakikisha kila mmoja anapata uzoefu bora. Karibu uone jinsi tunavyofanya mitindo kuwa rahisi na
-            kuvutia kwa wote.</p>
-        </div>
-    </div>
+<section class="hero">
+  <div>
+    <h2>Kuhusu Remori Dox & Glow</h2>
+    <p>Kuleta mtindo na vipodozi vya kisasa kwa wateja wetu kwa haraka na ubora wa kipekee.</p>
+  </div>
 </section>
 
-<!-- Footer -->
-<footer>
-    <p>&copy; 2025 Remori Dox & Glow. Haki zote zimehifadhiwa.</p>
-</footer>
+<section class="container">
+  <div class="about-grid">
+    <img src="manager.jpg" alt="Meneja Remori Dox & Glow">
+    <div>
+      <h3 class="section-title">Historia Yetu</h3>
+      <p><strong>Remori Dox & Glow</strong> ni duka la kisasa la mitindo na vipodozi vinavyolenga vijana na wadau wa fashion. Tunahakikisha kila mteja anapata bidhaa halisi na zenye mtindo wa kisasa.</p>
+      <p>Lengo letu ni kurahisisha ununuzi wa bidhaa za fashion na vipodozi — popote ulipo, bidhaa zetu zinakufikia kwa haraka na salama.</p>
+    </div>
+  </div>
 
-<script>
-// Google Translate Script
-function googleTranslateElementInit() {
-  new google.translate.TranslateElement(
-    {pageLanguage: 'sw', layout: google.translate.TranslateElement.InlineLayout.HORIZONTAL},
-    'google_translate_element'
-  );
-}
-</script>
-<script type="text/javascript" src="//translate.google.com/translate_a/element.js?cb=googleTranslateElementInit"></script>
+  <div style="margin-top:40px;">
+    <h3 class="section-title">Dhamira Yetu</h3>
+    <p>Kuleta furaha, urembo na mtindo kwa kila mteja kupitia bidhaa zenye ubora wa juu na huduma bora.</p>
+  </div>
+
+  <div style="margin-top:30px;">
+    <h3 class="section-title">Maono Yetu</h3>
+    <p>Kuunda duka namba moja Tanzania linalojulikana kwa ubunifu, uwazi, na huduma ya haraka.</p>
+  </div>
+
+  <div class="values">
+    <div class="value-card"><h4>Ubora</h4><p>Bidhaa zetu zote ni halisi na zenye viwango vya kimataifa.</p></div>
+    <div class="value-card"><h4>Huduma Bora</h4><p>Kila mteja ni sehemu ya familia yetu.</p></div>
+    <div class="value-card"><h4>Uaminifu</h4><p>Biashara nzuri hujengwa kwa uwazi na uaminifu.</p></div>
+    <div class="value-card"><h4>Ubunifu</h4><p>Tunatumia mbinu za kisasa kuongeza urahisi na kasi ya huduma.</p></div>
+    <div class="value-card"><h4>Thamani</h4><p>Bidhaa bora kwa bei rafiki na ofa za kuvutia kila mwezi.</p></div>
+    <div class="value-card"><h4>Urembo wa Asili</h4><p>Bidhaa zinazolinda ngozi na mwili bila madhara.</p></div>
+    <div class="value-card"><h4>Upendo</h4><p>Kujali mwonekano wa mteja kwa dhati, si biashara tu.</p></div>
+    <div class="value-card"><h4>Haraka</h4><p>Huduma zetu ni za spidi ya teknolojia.</p></div>
+  </div>
+</section>
+
+<footer>
+  <p>&copy; 2025 Remori Dox & Glow | 
+</footer>
 
 </body>
 </html>
-
-
-
