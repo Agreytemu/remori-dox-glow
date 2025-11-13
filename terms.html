@@ -3,38 +3,112 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Terms & Conditions - Remory Dox & Glow</title>
+<title>Remory Dox & Glow - Terms of Service</title>
 <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap" rel="stylesheet">
 <link rel="icon" href="images/favicon.png" type="image/png">
 <style>
-body{font-family:'Roboto',sans-serif;background:#fff0f6;color:#222;margin:0;padding:0;}
-.container{max-width:900px;margin:60px auto;background:#fff;padding:40px;border-radius:15px;box-shadow:0 8px 25px rgba(0,0,0,0.1);}
-h1{color:#ff0080;text-align:center;margin-bottom:30px;font-size:36px;}
-h2{color:#7928ca;margin-top:30px;}
-footer{text-align:center;margin-top:50px;padding:20px;background:#ff0080;color:#fff;border-radius:0 0 10px 10px;}
-a{color:#fff;text-decoration:underline;}
+body {
+    font-family: 'Roboto', sans-serif;
+    background:#fefefe;
+    color:#111;
+    margin:0;
+    padding:0;
+}
+header {
+    display:flex;
+    justify-content:space-between;
+    align-items:center;
+    padding:15px 50px;
+    background:#ff0080;
+    color:#fff;
+    position:sticky;
+    top:0;
+    z-index:1000;
+}
+header .logo img {height:50px;}
+header nav ul {display:flex; list-style:none;}
+header nav ul li {margin-left:30px;}
+header nav ul li a {text-decoration:none; color:#fff; font-weight:bold; transition:0.3s;}
+header nav ul li a:hover {color:#fff3f8;}
+
+.container {
+    max-width:1000px;
+    margin:50px auto;
+    padding:20px;
+    background:#fff;
+    border-radius:15px;
+    box-shadow:0 8px 25px rgba(0,0,0,0.1);
+}
+h1,h2,h3 {font-family:'Times New Roman', serif;}
+h1 {color:#ff0080; margin-bottom:20px;}
+h2 {color:#7928ca; margin-top:25px; margin-bottom:15px;}
+p {margin-bottom:15px; line-height:1.6; font-size:16px;}
+
+footer {
+    padding:25px;
+    background:#ff0080;
+    color:#fff;
+    text-align:center;
+    font-size:14px;
+    margin-top:30px;
+    border-top:2px solid #fff;
+}
+footer a {
+    color:#fff;
+    text-decoration:underline;
+    font-weight:bold;
+}
+footer a:hover {color:#fff3f8;}
+
+@media(max-width:768px){
+    header {flex-direction:column; padding:15px 20px;}
+    header nav ul {flex-direction:column; gap:15px; margin-top:10px;}
+    .container {padding:15px;}
+}
 </style>
 </head>
 <body>
+
+<header>
+    <div class="logo">
+        <img src="images/logo.png" alt="Remory Dox & Glow Logo">
+    </div>
+    <nav>
+        <ul>
+            <li><a href="index.html">Nyumbani</a></li>
+            <li><a href="shop.html">Duka</a></li>
+            <li><a href="about.html">Kuhusu</a></li>
+            <li><a href="contact.html">Wasiliana</a></li>
+        </ul>
+    </nav>
+</header>
+
 <div class="container">
-  <h1>⚖️ Terms & Conditions — Remory Dox & Glow</h1>
-  <p>Kwa kutumia tovuti yetu, unakubaliana na masharti haya:</p>
+    <h1>Terms of Service (Masharti ya Matumizi)</h1>
+    <p>Karibu kwenye Remory Dox & Glow. Kwa kutumia tovuti hii, unakubali masharti yafuatayo.</p>
 
-  <h2>1. Matumizi ya Huduma</h2>
-  <p>Tovuti hii inaruhusu ununuzi wa bidhaa za urembo, nguo na bidhaa za fashion. Unakubali kutumia tovuti bila kuvunja sheria.</p>
+    <h2>1. Huduma</h2>
+    <p>Tovuti hii inatoa maelezo ya bidhaa na huduma zinazopatikana kwenye duka la Remory Dox & Glow. Hakuna malipo au manunuzi ya moja kwa moja yanayofanyika hapa.</p>
 
-  <h2>2. Malipo</h2>
-  <p>Malipo yanapokelewa kupitia njia salama za simu (M-Pesa, TigoPesa, Airtel Money, Halopesa). Bei zinaweza kubadilika bila taarifa ya awali.</p>
+    <h2>2. Mali ya Kibiashara</h2>
+    <p>Picha, nembo, maandiko, na maudhui yote kwenye tovuti ni mali ya Remory Dox & Glow. Hakuna mtu anayeweza kuyatumia bila idhini yetu.</p>
 
-  <h2>3. Kurudisha Bidhaa</h2>
-  <p>Kurudishwa kwa bidhaa kunazingatia sera maalum. Tafadhali wasiliana nasi ndani ya siku 3 baada ya kupokea bidhaa.</p>
+    <h2>3. Faragha</h2>
+    <p>Tunahifadhi maelezo unayotoa kupitia contact form kwa malengo ya kujibu maswali au maombi yako. Taarifa yako haijashirikiwa na pihakia wa tatu bila idhini yako.</p>
 
-  <h2>4. Haki za Kibiashara</h2>
-  <p>Nembo, jina, na picha zote za Remory Dox & Glow ni mali ya kampuni. Hairuhusiwi kutumia bila ruhusa.</p>
+    <h2>4. Usalama wa Mtandao</h2>
+    <p>Tovuti imeundwa kwa kiwango cha juu cha usalama, lakini hatuwezi kudhamini ulinzi kamili dhidi ya mashambulizi ya mtandaoni. Tumia kompyuta/simu yako kwa uwajibikaji.</p>
 
-  <footer>
-    <p>&copy; 2025 Remory Dox & Glow | <a href="index.html">Rudi Nyumbani</a></p>
-  </footer>
+    <h2>5. Sera ya Mabadiliko</h2>
+    <p>Remory Dox & Glow ina haki ya kubadilisha maudhui au masharti wakati wowote. Mabadiliko yataonekana mara tu yanapochapishwa kwenye tovuti.</p>
+
+    <h2>6. Mawasiliano</h2>
+    <p>Maswali au maombi kuhusu masharti haya unaweza kutuma kupitia <a href="contact.html">ukurasa wa mawasiliano</a>.</p>
 </div>
+
+<footer>
+    <p>&copy; 2025 Remory Dox & Glow. Haki zote zimehifadhiwa. <a href="index.html">Rudi Nyumbani</a></p>
+</footer>
+
 </body>
 </html>
