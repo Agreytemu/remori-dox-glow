@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="sw">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Privacy Policy - Remory Dox & Glow</title>
+<link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap" rel="stylesheet">
+<link rel="icon" href="images/favicon.png" type="image/png">
+<style>
+body{font-family:'Roboto',sans-serif;background:#fff0f6;color:#222;margin:0;padding:0;}
+.container{max-width:900px;margin:60px auto;background:#fff;padding:40px;border-radius:15px;box-shadow:0 8px 25px rgba(0,0,0,0.1);}
+h1{color:#ff0080;text-align:center;margin-bottom:30px;font-size:36px;}
+h2{color:#7928ca;margin-top:30px;}
+footer{text-align:center;margin-top:50px;padding:20px;background:#ff0080;color:#fff;border-radius:0 0 10px 10px;}
+a{color:#fff;text-decoration:underline;}
+</style>
+</head>
+<body>
+<div class="container">
+  <h1>🔒 Privacy Policy — Remory Dox & Glow</h1>
+  <p>Tunathamini faragha yako. Sera hii inaelezea jinsi tunavyokusanya, kutumia na kulinda taarifa zako binafsi.</p>
+
+  <h2>1. Taarifa Tunazokusanya</h2>
+  <ul>
+    <li>Jina na mawasiliano yako (namba ya simu, barua pepe).</li>
+    <li>Maelezo ya oda na anwani ya usafirishaji.</li>
+    <li>Taarifa za kifaa unachotumia (browser, IP address).</li>
+  </ul>
+
+  <h2>2. Jinsi Tunavyotumia Taarifa</h2>
+  <ul>
+    <li>Kukamilisha oda zako.</li>
+    <li>Kuboresha huduma zetu na uzoefu wako mtandaoni.</li>
+    <li>Kukutumia ofa na promosheni ukiruhusu.</li>
+  </ul>
+
+  <h2>3. Kulinda Taarifa Zako</h2>
+  <p>Tunatumia encryption (SSL) na hatua za usalama kuhakikisha taarifa zako hazipotei wala kutumiwa vibaya.</p>
+
+  <h2>4. Haki Zako</h2>
+  <p>Unaweza kuomba kufutwa kwa taarifa zako, au kusitisha kupokea matangazo wakati wowote.</p>
+
+  <footer>
+    <p>&copy; 2025 Remory Dox & Glow | <a href="index.html">Rudi Nyumbani</a></p>
+  </footer>
+</div>
+</body>
+</html>
